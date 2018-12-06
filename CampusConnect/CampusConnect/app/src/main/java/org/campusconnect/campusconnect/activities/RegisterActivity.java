@@ -1,7 +1,6 @@
 package org.campusconnect.campusconnect.activities;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -21,8 +20,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserProfileChangeRequest;
-
 import org.campusconnect.campusconnect.R;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
@@ -93,16 +90,11 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         updateUI(currentUser);
     }
 
-    private void createAccount(String email, String password, String username) {
+    private void createAccount(String email, String password) {
         Log.d(TAG, "createAccount:" + email);
         if (!validateForm()) {
             return;
         }
-
-        final UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-                .setDisplayName(username)
-                //.setPhotoUri(Uri.parse("https://example.com/jane-q-user/profile.jpg"))
-                .build();
 
         // [START create_user_with_email]
         mAuth.createUserWithEmailAndPassword(email, password)
@@ -114,15 +106,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
-                            user.updateProfile(profileUpdates)
-                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<Void> task) {
-                                            if (task.isSuccessful()) {
-                                                Log.d(TAG, "User profile updated.");
-                                            }
-                                        }
-                                    });
                             signIn(textInputEditTextEmail.getText().toString(), textInputEditTextPassword.getText().toString());
                         } else {
                             // If sign in fails, display a message to the user.
@@ -262,7 +245,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         int i = v.getId();
         if (i == R.id.appCompatButtonRegister) {
-            createAccount(textInputEditTextEmail.getText().toString(), textInputEditTextPassword.getText().toString(), textInputEditTextName.getText().toString());
+            createAccount(textInputEditTextEmail.getText().toString(), textInputEditTextPassword.getText().toString());
             //postDataToSQLite();
         } else if (i == R.id.appCompatTextViewLoginLink) {
             // Navigate to LoginActivity

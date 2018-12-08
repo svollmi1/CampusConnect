@@ -6,8 +6,14 @@
     <TextView
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text=" Map page"
         android:textSize="25dp"
         android:layout_centerHorizontal="true"/>
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/imageMap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:src="@drawable/campusmap" />
 
 </RelativeLayout>

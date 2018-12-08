@@ -55,8 +55,6 @@ public class SocialFeedsFragment extends Fragment implements View.OnClickListene
 
     @Nullable
     @Override
-
-    // TODO: RECYCLERVIEW IS NOT SHOWING POSTS - FIX!
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_socialfeed, container, false);
         RecyclerView recyclerView = rootView.findViewById(R.id.postrecyclerview);
@@ -88,18 +86,6 @@ public class SocialFeedsFragment extends Fragment implements View.OnClickListene
             holder.postUser.setText(model.getUsername());
         }
     };
-
-    /*
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState){
-        super.onActivityCreated(savedInstanceState);
-    }
-
-    @Override
-    public void onViewCreated(View rootView, Bundle savedInstanceState) {
-        super.onViewCreated(rootView, savedInstanceState);
-    }
-    */
 
     @Override
     public void onClick(View rootView) {

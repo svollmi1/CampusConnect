@@ -97,7 +97,7 @@ public class PostActivity extends AppCompatActivity {
                                     newPost.child("desc").setValue(PostDesc);
                                     newPost.child("imageUrl").setValue(uri.toString());
                                     newPost.child("uid").setValue(mCurrentUser.getUid());
-                                    newPost.child("username").setValue(dataSnapshot.child("name").getValue())
+                                    newPost.child("username").setValue(mCurrentUser.getDisplayName())
                                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task) {

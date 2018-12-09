@@ -2,13 +2,17 @@
 <LinearLayout android:orientation="vertical"
     android:layout_margin="10dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/postrecyclerview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:paddingBottom="48dp"
+        android:clipToPadding="false">
 
     </android.support.v7.widget.RecyclerView>
 
@@ -16,7 +20,7 @@
         android:id="@+id/imagePostBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="0dp"
         android:background="@color/colorTextHint"
         android:text="@string/text_new_post" />
 </LinearLayout>

@@ -33,7 +33,7 @@ android:layout_height="match_parent">
         android:id="@+id/post_desc_txtview"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_margin="5dp"
+        android:layout_margin="3dp"
         android:text="@string/text_description_post"/>
 
     <TextView

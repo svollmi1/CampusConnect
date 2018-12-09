@@ -27,7 +27,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Aanvi Jha"
+                android:text="Test User"
                 android:textColor="#fff"
                 android:textStyle="bold"
                 android:textSize="26sp"
@@ -55,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
-                android:text="abc32@montclair.edu"
+                android:text="test@montclair.edu"
                 android:textSize="25dp"
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"/>

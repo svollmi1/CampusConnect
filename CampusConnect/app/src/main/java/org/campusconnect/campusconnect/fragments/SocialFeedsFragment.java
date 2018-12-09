@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
@@ -80,7 +81,7 @@ public class SocialFeedsFragment extends Fragment implements View.OnClickListene
 
         @Override
         protected void onBindViewHolder(PostViewHolder holder, int position, Post model) {
-            Glide.with(getActivity()).load(model.getImageUrl()).into(holder.postImage);
+            Glide.with(getActivity()).load(model.getImageUrl()).diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.postImage);
             holder.postTitle.setText(model.getTitle());
             holder.postDesc.setText(model.getDesc());
             holder.postUser.setText(model.getUsername());

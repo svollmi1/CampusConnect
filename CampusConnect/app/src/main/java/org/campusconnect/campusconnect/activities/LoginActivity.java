@@ -21,9 +21,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import org.campusconnect.campusconnect.R;
-//import org.campusconnect.campusconnect.helpers.InputValidation;
-//import org.campusconnect.campusconnect.sql.DatabaseHelper;
-//import org.campusconnect.campusconnect.model.User;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "LoginActivity";
@@ -35,11 +32,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private TextInputEditText textInputEditTextPassword;
     private AppCompatButton appCompatButtonLogin;
     private AppCompatTextView textViewLinkRegister;
-    //private InputValidation inputValidation;
-    //private DatabaseHelper databaseHelper;
     private TextView mStatusTextView;
     private TextView mDetailTextView;
-    //private User user;
 
     // [START declare_auth]
     private FirebaseAuth mAuth;
@@ -50,10 +44,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         initViews();
-
-        // ALL SQLITE METHODS HAVE BEEN DEPRECATED IN FAVOR OF FIREBASE AUTHENTICATION!
         initListeners();
-        //initObjects();
 
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
@@ -193,54 +184,4 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         appCompatButtonLogin.setOnClickListener(this);
         textViewLinkRegister.setOnClickListener(this);
     }
-
-    /*
-    ///**
-    // * This method is to initialize objects to be used
-    //
-    private void initObjects() {
-        databaseHelper = new DatabaseHelper(activity);
-        inputValidation = new InputValidation(activity);
-    }
-
-    ///**
-    // * This method is to validate the input text fields and verify login credentials from SQLite
-    //
-    private void verifyFromSQLite() {
-        if (!inputValidation.isInputEditTextFilled(textInputEditTextEmail, textInputLayoutEmail, getString(R.string.error_message_email))) {
-            return;
-        }
-        if (!inputValidation.isInputEditTextEmail(textInputEditTextEmail, textInputLayoutEmail, getString(R.string.error_message_email))) {
-            return;
-        }
-        if (!inputValidation.isInputEditTextFilled(textInputEditTextPassword, textInputLayoutPassword, getString(R.string.error_message_email))) {
-            return;
-        }
-        if (databaseHelper.checkUser(textInputEditTextEmail.getText().toString().trim()
-                , textInputEditTextPassword.getText().toString().trim())) {
-
-            /* Code to access UserListActivity for administrative users to be added to final iteration of the application
-            Intent accountsIntent = new Intent(activity, UsersListActivity.class);
-            accountsIntent.putExtra("EMAIL", textInputEditTextEmail.getText().toString().trim());
-            emptyInputEditText();
-            startActivity(accountsIntent);
-
-
-            Intent accountsIntent = new Intent(activity, MainActivity.class);
-            startActivity(accountsIntent);
-
-        } else {
-            // Snack Bar to show success message that record is wrong
-            Snackbar.make(nestedScrollView, getString(R.string.error_valid_email_password), Snackbar.LENGTH_LONG).show();
-        }
-    }
-
-    ///**
-    // * This method is to empty all input edit text
-    //
-    private void emptyInputEditText() {
-        textInputEditTextEmail.setText(null);
-        textInputEditTextPassword.setText(null);
-    }
-    */
 }

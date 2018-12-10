@@ -31,6 +31,31 @@
             android:label="@string/title_activity_main">
         </activity>
         <activity
+            android:name=".activities.AssignmentCa1Activity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_assignments">
+        </activity>
+        <activity
+            android:name=".activities.AssignmentCa2Activity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_assignments">
+        </activity>
+        <activity
+            android:name=".activities.AssignmentFirstActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_assignments">
+        </activity>
+        <activity
+            android:name=".activities.AssignmentSecondActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_assignments">
+        </activity>
+        <activity
+            android:name=".activities.AssignmentThirdActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_assignments">
+        </activity>
+        <activity
             android:name=".activities.RegisterActivity"
             android:screenOrientation="portrait"
             android:label="@string/title_activity_register">
